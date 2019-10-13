@@ -1,0 +1,18 @@
+      Dim Mystr As String
+        Dim X, Z As Integer
+        Dim Midword As String
+        Mystr = ""
+        X = 0
+        Z = 0
+        Midword = ""
+
+        Console.Write("Enter The String: ")
+        Mystr = Console.ReadLine
+
+        X = InStr(Mystr, " ")
+        Z = InStr(X + 1, Mystr, " ")
+
+        Midword = Mid(Mystr, X + 1, Z - X - 1)
+
+        Console.WriteLine(" YOUR MIDDLE NAME IS: " & Midword)
+        Console.ReadKey()

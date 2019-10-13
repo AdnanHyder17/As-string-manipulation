@@ -1,0 +1,41 @@
+Dim MyStr,Alphabets As String
+        Dim AlphaChar, NumbsChar, Specialchar As Char
+        Dim special, Numbs As String
+        Dim value, counter As Integer
+        MyStr = ""
+        AlphaChar = ""
+        NumbsChar = ""
+        Specialchar = ""
+        special = ""
+        Alphabets = ""
+        Numbs = ""
+        value = 0
+        counter = 0
+        Console.Write("Enter your string: ")
+        MyStr = Console.ReadLine
+
+        For counter = 1 To Len(MyStr)
+            NumbsChar = Mid(MyStr, counter, 1)
+            value = Asc(NumbsChar)
+            If value > 47 And value < 58 Then
+                Numbs = Numbs + NumbsChar
+            End If
+        Next
+        For counter = 1 To Len(MyStr)
+            AlphaChar = Mid(MyStr, counter, 1)
+            value = Asc(AlphaChar)
+            If value >= 65 And value <= 90 Or value >= 97 And value <= 122 Then
+                Alphabets = Alphabets + AlphaChar
+            End If
+        Next
+        For counter = 1 To Len(MyStr)
+            Specialchar = Mid(MyStr, counter, 1)
+            value = Asc(Specialchar)
+            If value > 31 And value < 48 Or value > 57 And value < 65 Then
+                special = special + Specialchar
+            End If
+        Next
+        Console.WriteLine("Numbers: " & Numbs)
+        Console.WriteLine("Alphabets: " & Alphabets)
+        Console.WriteLine("Special Characters: " & special)
+        Console.ReadKey()

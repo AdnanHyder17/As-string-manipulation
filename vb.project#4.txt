@@ -1,0 +1,26 @@
+    Dim MyStr, NewString As String
+        Dim Char2 As String
+        Dim PChar As String
+        Dim counter As Integer
+        Dim chrloop As Integer
+        Dim Char1 As String
+        NewString = ""
+        PChar = ""
+        chrloop = 0
+        Char1 = ""
+        counter = 0
+        Console.Write("Enter String: ")
+        MyStr = Console.ReadLine
+        Console.Write("Enter the character to be removed: ")
+        Char2 = Console.ReadLine
+        For counter = 1 To Len(MyStr)
+            PChar = Mid(MyStr, counter, 1)
+            For charloop = 1 To Len(MyStr)
+                Char1 = Mid(Char2, charloop, 1)
+            Next
+            If PChar <> Char2 Then
+                NewString = NewString & PChar
+            End If
+        Next
+        Console.WriteLine(NewString)
+        Console.ReadKey()

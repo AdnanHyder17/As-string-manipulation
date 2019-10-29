@@ -1,0 +1,48 @@
+Module Module1
+
+    Sub Main()
+        Dim Binstr As String
+        Dim chr As Integer
+        Dim validBinaryString As Boolean
+        Dim counter As Integer
+
+        Binstr = ""
+        chr = 0
+        validBinaryString = True
+        counter = 0
+
+        Console.Write("Enter the Binary Number: ")
+        Binstr = Console.ReadLine
+
+            For counter = 1 To Len(Binstr)
+                chr = Mid(Binstr, counter, 1)
+            If chr > 1 And chr < 0 Then
+                validBinaryString = False
+
+            Else
+                validBinaryString = True
+
+            End If
+            Next
+
+        If Len(Binstr) >= 1 And Len(Binstr) <= 8 Then
+            validBinaryString = True
+        Else
+            validBinaryString = False
+
+        End If
+
+        If validBinaryString = True Then
+            Console.WriteLine("Valid Binary Number")
+            Console.ReadLine()
+
+        Else
+            Console.WriteLine("Not a Valid Binary Number")
+            Console.ReadKey()
+        End If
+
+
+
+    End Sub
+
+End Module
